@@ -9,15 +9,19 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.control.*?>
 
-<GridPane fx:controller="controller.LoginController" alignment="CENTER" styleClass="background" prefHeight="100.0" prefWidth="400.0" spacing="20" xmlns:fx="http://javafx.com/fxml/1">
+<GridPane fx:controller="controller.LoginController" alignment="CENTER" styleClass="background" prefHeight="100.0" prefWidth="400.0"
+          xmlns:fx="http://javafx.com/fxml/1">
+        <ImageView>
+                <Image url="/image/login_icon.png"/>
+        </ImageView>
         <Separator/>
-        <Label text="Login" styleClass="heading"/>
+                <Label GridPane.columnIndex="0" GridPane.rowIndex="0" text="Login" styleClass="heading"/>
         <Separator/>
-        <Label GridPane.columnIndex="0" GridPane.rowIndex="0" text="Username"/>
-        <TextField fx:id="username" GridPane.columnIndex="1" GridPane.rowIndex="0" />
-        <Label GridPane.columnIndex="0" GridPane.rowIndex="1" text="Password"/>
-        <PasswordField fx:id="password" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-        <Button fx:id="login" text="Login" />
+        <Label GridPane.columnIndex="0" GridPane.rowIndex="1" text="Username"/>
+        <TextField fx:id="username" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+        <Label GridPane.columnIndex="0" GridPane.rowIndex="2" text="Password"/>
+        <PasswordField fx:id="password" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+        <Button GridPane.columnIndex="0" GridPane.rowIndex="3" fx:id="login" text="Login" onAction="#handleLogin" />
 
         <stylesheets>
             <URL value="@style.css"/>

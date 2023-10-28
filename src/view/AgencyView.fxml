@@ -9,6 +9,15 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.control.*?>
 
-<VBox alignment="CENTER" styleClass="background" prefHeight="200.0" prefWidth="800.0" spacing="20" xmlns:fx="http://javafx.com/fxml/1">
-        
-</VBox>
+<GridPane fx:controller="controller.AgencyController" alignment="CENTER" styleClass="background" prefHeight="200.0" prefWidth="800.0" xmlns:fx="http://javafx.com/fxml/1">
+    <ImageView>
+        <Image url="/image/agency.png"/>
+    </ImageView>
+    <Separator/>
+        <Label GridPane.columnIndex="0" GridPane.rowIndex="1" text="" styleClass="heading" textAlignment="CENTER"/>
+    <Separator/>
+    <Button GridPane.rowIndex="1" GridPane.columnIndex="0" text="Explore Flights" fx:id="flights" onAction="#handleFlights" />
+    <Button GridPane.rowIndex="1" GridPane.columnIndex="0" text="Explore Destinations" fx:id="destinations" onAction="#handleDestinations"/>
+    <Button GridPane.rowIndex="1" GridPane.columnIndex="0" text="Book a Trip" fx:id="trip" onAction="#handleTrips"/>
+    <Button GridPane.rowIndex="1" GridPane.columnIndex="0" text="Exit" fx:id="exit" onAction="#handleExit"/>
+</GridPane>
