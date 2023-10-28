@@ -11,9 +11,9 @@
 
 <GridPane fx:controller="controller.LoginController" alignment="CENTER" styleClass="background" prefHeight="100.0" prefWidth="400.0"
           xmlns:fx="http://javafx.com/fxml/1">
-        <ImageView>
-                <Image url="/image/login_icon.png"/>
-        </ImageView>
+<!--        <ImageView>-->
+<!--                <Image url="/image/login_icon.png"/>-->
+<!--        </ImageView>-->
         <Separator/>
                 <Label GridPane.columnIndex="0" GridPane.rowIndex="0" text="Login" styleClass="heading"/>
         <Separator/>

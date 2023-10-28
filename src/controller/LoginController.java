@@ -41,21 +41,21 @@ public class LoginController extends Controller<Administrators> {
     @FXML
     private void handleLogin(ActionEvent event) {
         try {
-            if (model.hasAdministrator(getUsername(), getPassword())) {
+            if (getAdministrator().hasAdministrator(getUsername(), getPassword())) {
                 try {
                     ViewLoader.showStage(model, "/view/AgencyView.fxml", "Agency", new Stage());
-                } catch (IOException e) {
+                    }
+                catch (IOException e) {
                     ViewLoader.showErrorWindow(new ErrorModel(e,"IO Exception Error"));
                 }
             }
-        } catch (InvalidCredentialsException e) {
+        }
+        catch (InvalidCredentialsException e) {
             ViewLoader.showErrorWindow(new ErrorModel(e, "Wrong Credentials"));
         }
     }
 }
 
-    // public void openAgency(ActionEvent e) {
-    //     ViewLoader.showStage(new Agency(), "/view.AgencyView.fxml", new Stage());
-    // }
+
     
 
