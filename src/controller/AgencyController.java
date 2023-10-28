@@ -3,6 +3,7 @@ package controller;
 
 import au.edu.uts.ap.javafx.Controller;
 import au.edu.uts.ap.javafx.ViewLoader;
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -21,6 +22,11 @@ public class AgencyController extends Controller<Agency> {
     @FXML private Button flights;
     @FXML private Button destinations;
 
+    public Agency agency = new Agency();
+
+    public final Agency getAgency(){
+        return agency;
+    }
     public Administrator getUser(){
         return model.getLoggedInUser();
     }
@@ -50,16 +56,12 @@ public class AgencyController extends Controller<Agency> {
     }
     @FXML
     private void handleExit(ActionEvent event){
-        try {
-            ViewLoader.showStage(model, "/view/", "Flights", new Stage());
-        } catch (IOException ex) {
-            ViewLoader.showErrorWindow(new ErrorModel(ex,"IO Exception Error"));
-        }
+        Platform.exit();
     }
-    @Override
-    public String toString(){
-        return "Hi " + getUser().getName() + "welcome to the Prog2 Travel Agency";
-    }
+//    @Override
+//    public String toString(){
+//        return "Hi " + getUser().getName() + "welcome to the Prog2 Travel Agency";
+//    }
 
 
 }
