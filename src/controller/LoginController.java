@@ -11,6 +11,7 @@ import javafx.stage.Stage;
 import model.Administrator;
 import model.Administrators;
 import model.Agency;
+import model.Exceptions.ErrorModel;
 import model.Exceptions.InvalidCredentialsException;
 
 import javax.swing.*;
@@ -36,24 +37,22 @@ public class LoginController extends Controller<Administrators> {
     private String getPassword() {
         return password.getText();
     }
-}
 
-//    @FXML
-//    private void handleLogin(ActionEvent event) {
-//        try {
-//            if (model.hasAdministrator(getUsername(), getPassword())) {
-//                try {
-//                    ViewLoader.showStage(model, "/view/AgencyView.fxml", "Agency", new Stage());
-//                } catch (IOException e) {
-//                    throw new RuntimeException(e);
-//                }
-//            }
-//        } catch (InvalidCredentialsException e) {
-//            throw new RuntimeException(e);
-//        }
-//    }
-//}
-//    }
+    @FXML
+    private void handleLogin(ActionEvent event) {
+        try {
+            if (model.hasAdministrator(getUsername(), getPassword())) {
+                try {
+                    ViewLoader.showStage(model, "/view/AgencyView.fxml", "Agency", new Stage());
+                } catch (IOException e) {
+                    ViewLoader.showErrorWindow(new ErrorModel(e,"IO Exception Error"));
+                }
+            }
+        } catch (InvalidCredentialsException e) {
+            ViewLoader.showErrorWindow(new ErrorModel(e, "Wrong Credentials"));
+        }
+    }
+}
 
     // public void openAgency(ActionEvent e) {
     //     ViewLoader.showStage(new Agency(), "/view.AgencyView.fxml", new Stage());
