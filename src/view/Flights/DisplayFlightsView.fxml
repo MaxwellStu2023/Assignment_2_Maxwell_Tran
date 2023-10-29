@@ -14,24 +14,32 @@
 <?import javafx.scene.control.cell.PropertyValueFactory?>
 <GridPane fx:controller="controller.Flights.DisplayFlightsController" alignment="CENTER" styleClass="background" prefHeight="700.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1">
        <Label text="Flights" styleClass="heading" />
-    <TableView fx:id="FlightsAllTV" prefWidth="500" prefHeight="200" items="${controller.flights.flights}">
+    <TableView fx:id="FlightsAllTV" prefHeight="200">
         <columns>
             <TableColumn text="Airline">
-
+                <cellValueFactory>
+                    <PropertyValueFactory property="airline"/>
+                </cellValueFactory>
             </TableColumn>
             <TableColumn text="Flight Number">
                 <cellValueFactory>
-                    <PropertyValueFactory property=""
+                    <PropertyValueFactory property="flightNo"/>
                 </cellValueFactory>
             </TableColumn>
             <TableColumn text="Takeoff Country">
-
+                <cellValueFactory>
+                    <PropertyValueFactory property="takeoff"/>
+                </cellValueFactory>
             </TableColumn>
             <TableColumn text="Landing Country">
-
+                <cellValueFactory>
+                    <PropertyValueFactory property="landing"/>
+                </cellValueFactory>
             </TableColumn>
             <TableColumn text="Cost">
-
+                <cellValueFactory>
+                    <PropertyValueFactory property="cost"/>
+                </cellValueFactory>
             </TableColumn>
         </columns>
     </TableView>

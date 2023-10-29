@@ -36,8 +36,9 @@ public class ExploreFlightsController extends Controller<Flights> {
     @FXML
     private void handleFlightFilterView(ActionEvent event) {
         try {
-            ViewLoader.showStage(model, "/view/Flights/DisplayFilteredFlightsView.fxml", "View All Flights", new Stage());
+            ViewLoader.showStage(model, "/view/Flights/DisplayFilteredFlightsView.fxml", "View Filtered Flights", new Stage());
         } catch (IOException e) {
+            e.printStackTrace();
             ViewLoader.showErrorWindow(new ErrorModel(e, "IO Exception Error"));
         }
     }
@@ -45,8 +46,9 @@ public class ExploreFlightsController extends Controller<Flights> {
     @FXML
     private void handleFlightAdd(ActionEvent event) {
         try {
-            ViewLoader.showStage(model, "/view/Flights/AddFlightView.fxml", "View All Flights", new Stage());
+            ViewLoader.showStage(model, "/view/Flights/AddFlightView.fxml", "Add Flight", new Stage());
         } catch (IOException e) {
+            e.printStackTrace();
             ViewLoader.showErrorWindow(new ErrorModel(e, "IO Exception Error"));
         }
     }
@@ -54,8 +56,9 @@ public class ExploreFlightsController extends Controller<Flights> {
     @FXML
     private void handleFlightRemove(ActionEvent event) {
         try {
-            ViewLoader.showStage(model, "/view/Flights/RemoveFlightView.fxml", "View All Flights", new Stage());
+            ViewLoader.showStage(model, "/view/Flights/RemoveFlightView.fxml", "Remove Flight", new Stage());
         } catch (IOException e) {
+            e.printStackTrace();
             ViewLoader.showErrorWindow(new ErrorModel(e, "IO Exception Error"));
         }
     }

@@ -9,6 +9,15 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.control.*?>
 
-<VBox alignment="CENTER" styleClass="background" prefHeight="420.0" prefWidth="600.0" spacing="20" xmlns:fx="http://javafx.com/fxml/1">
-        
-</VBox>
+<GridPane fx:controller="controller.Flights.ModifyFlightsController" alignment="CENTER" styleClass="background" prefHeight="420.0" prefWidth="600.0"  xmlns:fx="http://javafx.com/fxml/1">
+    <Separator/>
+    <Label text="Remove a Flight" styleClass="heading"/>
+    <Separator/>
+    <Label text="Takeoff" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+    <TextField fx:id="RemoveTakeoff" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+    <Label text="Landing" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+    <TextField fx:id="RemoveLanding" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+    <Button fx:id="RemoveButton" GridPane.columnIndex="0" GridPane.rowIndex="3" text="Remove Flight" onAction="#handleRemoveFlight"/>
+    <Button GridPane.columnIndex="1" GridPane.rowIndex="3" text="Cancel" fx:id="CloseRemoveButton" onAction="#CloseRemoveFlight"/>
+
+</GridPane>

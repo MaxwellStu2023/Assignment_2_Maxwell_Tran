@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <?import java.lang.*?>
 <?import java.net.*?>
 <?import java.util.*?>
@@ -9,6 +8,21 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.control.*?>
 
-<VBox alignment="CENTER" styleClass="background" prefHeight="420.0" prefWidth="600.0" spacing="20" xmlns:fx="http://javafx.com/fxml/1">
-        
-</VBox>
+<GridPane fx:controller="controller.Flights.ModifyFlightsController" alignment="CENTER" styleClass="background" prefHeight="420.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1">
+        <Separator/>
+            <Label text="Add a Flight" styleClass="heading"/>
+        <Separator/>
+    <Label text="Airline" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+    <TextField GridPane.rowIndex="1" GridPane.columnIndex="1" fx:id="AddAirline"/>
+    <Label text="Flight Number" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+    <TextField GridPane.rowIndex="2" GridPane.columnIndex="1" fx:id="AddNumber"/>
+    <Label text="Takeoff" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
+    <TextField GridPane.rowIndex="3" GridPane.columnIndex="1" fx:id="AddTakeoff"/>
+    <Label text="Landing" GridPane.columnIndex="0" GridPane.rowIndex="4"/>
+    <TextField GridPane.rowIndex="4" GridPane.columnIndex="1" fx:id="AddLanding"/>
+    <Label  text="Cost" GridPane.columnIndex="0" GridPane.rowIndex="5"/>
+    <TextField GridPane.rowIndex="5" GridPane.columnIndex="1" fx:id="AddCost"/>
+    <Button GridPane.rowIndex="6" GridPane.columnIndex="0" fx:id="AddButton" text="Add Flight" onAction="#handleAddFlight" alignment="BOTTOM_LEFT"/>
+    <Button GridPane.rowIndex="6" GridPane.columnIndex="1" fx:id="CloseAddButton" text="Cancel" onAction="#CloseAddFlight" alignment="BOTTOM_RIGHT"/>
+
+</GridPane>

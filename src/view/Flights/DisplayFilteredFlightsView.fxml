@@ -9,6 +9,41 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.control.*?>
 
-<VBox alignment="CENTER" styleClass="background" prefHeight="800.0" prefWidth="600.0" spacing="20" xmlns:fx="http://javafx.com/fxml/1">
-        
-</VBox>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<GridPane fx:controller="controller.Flights.DisplayFlightsController" alignment="CENTER" styleClass="background" prefHeight="800.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1">
+    <Separator/>
+    <Label text="Filtered Flights" alignment="CENTER" GridPane.rowIndex="1"/>
+    <Separator/>
+    <Label text="Country" alignment="CENTER" GridPane.rowIndex="2"/>
+    <TextField fx:id="Filter" GridPane.rowIndex="3"/>
+    <TableView GridPane.rowIndex="4" fx:id="FlightsFilteredTV" prefHeight="200">
+        <columns>
+            <TableColumn text="Airline">
+                <cellValueFactory>
+                    <PropertyValueFactory property="airline"/>
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn text="Flight Number">
+                <cellValueFactory>
+                    <PropertyValueFactory property="flightNo"/>
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn text="Takeoff Country">
+                <cellValueFactory>
+                    <PropertyValueFactory property="takeoff"/>
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn text="Landing Country">
+                <cellValueFactory>
+                    <PropertyValueFactory property="landing"/>
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn text="Cost">
+                <cellValueFactory>
+                    <PropertyValueFactory property="cost"/>
+                </cellValueFactory>
+            </TableColumn>
+        </columns>
+    </TableView>
+</GridPane>
