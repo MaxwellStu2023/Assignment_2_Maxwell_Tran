@@ -35,7 +35,13 @@ public class DisplayFlightsController extends Controller<Flights> {
             FlightsAllTV.setItems(model.getFlights());
         }
         if (FlightsFilteredTV != null) {
-            FlightsFilteredTV.setItems(model.getFilteredFlights(Filter.getText().toLowerCase()));
+            FlightsFilteredTV.setItems(model.getFilteredFlights(Filter.textProperty().addListener(observable -> filterFlights()));
+        }
+    }
+
+    public void filterFlights(){
+        if (Filter.getText().toLowerCase().contains(model.getFlight().getAirline())){
+            model.getFilteredFlights().add(new Flight())
         }
     }
 }

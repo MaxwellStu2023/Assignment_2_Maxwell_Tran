@@ -25,4 +25,7 @@
     <Button GridPane.rowIndex="6" GridPane.columnIndex="0" fx:id="AddButton" text="Add Flight" onAction="#handleAddFlight" alignment="BOTTOM_LEFT"/>
     <Button GridPane.rowIndex="6" GridPane.columnIndex="1" fx:id="CloseAddButton" text="Cancel" onAction="#CloseAddFlight" alignment="BOTTOM_RIGHT"/>
 
+    <stylesheets>
+        <URL value="@/view/style.css"/>
+    </stylesheets>
 </GridPane>

@@ -20,4 +20,7 @@
     <Button fx:id="RemoveButton" GridPane.columnIndex="0" GridPane.rowIndex="3" text="Remove Flight" onAction="#handleRemoveFlight"/>
     <Button GridPane.columnIndex="1" GridPane.rowIndex="3" text="Cancel" fx:id="CloseRemoveButton" onAction="#CloseRemoveFlight"/>
 
+    <stylesheets>
+        <URL value="@/view/style.css"/>
+    </stylesheets>
 </GridPane>

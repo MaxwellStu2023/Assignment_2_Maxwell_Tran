@@ -43,4 +43,8 @@
             </TableColumn>
         </columns>
     </TableView>
+
+    <stylesheets>
+        <URL value="@/view/style.css"/>
+    </stylesheets>
 </GridPane>
