@@ -14,7 +14,7 @@
 <!--        <Image url="/image/agency.png"/>-->
 <!--    </ImageView>-->
     <Separator/>
-    <Label text="Hi ${controller.agency.loggedInUser} welcome to the Prog2 Travel Agency" textAlignment="CENTER"/>
+    <Label fx:id="Heading" textAlignment="CENTER"/>
     <Separator/>
     <Button GridPane.rowIndex="2" GridPane.columnIndex="0" text="Explore Flights" fx:id="flights" onAction="#handleFlights" />
     <Button GridPane.rowIndex="2" GridPane.columnIndex="1" text="Explore Destinations" fx:id="destinations" onAction="#handleDestinations"/>
