@@ -15,11 +15,11 @@
 <!--                <Image url="/image/login_icon.png"/>-->
 <!--        </ImageView>-->
         <Separator/>
-                <Label GridPane.columnIndex="0" GridPane.rowIndex="0" text="Login" styleClass="heading"/>
+        <Label GridPane.rowIndex="0" GridPane.columnIndex="0" text="Login" styleClass="heading" alignment="CENTER"/>
         <Separator/>
-        <Label GridPane.columnIndex="0" GridPane.rowIndex="1" text="Username"/>
+        <Label GridPane.columnIndex="0" GridPane.rowIndex="1" text="Username: "/>
         <TextField fx:id="username" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-        <Label GridPane.columnIndex="0" GridPane.rowIndex="2" text="Password"/>
+        <Label GridPane.columnIndex="0" GridPane.rowIndex="2" text="Password: "/>
         <PasswordField fx:id="password" GridPane.columnIndex="1" GridPane.rowIndex="2" />
         <Button GridPane.columnIndex="0" GridPane.rowIndex="3" fx:id="login" text="Login" onAction="#handleLogin" />
 

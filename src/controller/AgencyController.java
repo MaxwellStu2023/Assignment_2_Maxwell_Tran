@@ -14,6 +14,7 @@ import model.Agency;
 import model.Exceptions.ErrorModel;
 import model.Trip;
 
+import javax.swing.text.html.ImageView;
 import java.io.IOException;
 
 public class AgencyController extends Controller<Agency> {
@@ -21,11 +22,8 @@ public class AgencyController extends Controller<Agency> {
     @FXML private Button trip;
     @FXML private Button flights;
     @FXML private Button destinations;
-
-    public Agency agency = new Agency();
-
     public final Agency getAgency(){
-        return agency;
+        return model;
     }
     public Administrator getUser(){
         return model.getLoggedInUser();
@@ -33,7 +31,7 @@ public class AgencyController extends Controller<Agency> {
     @FXML
     private void handleFlights(ActionEvent event){
         try {
-            ViewLoader.showStage(model.getFlights(), "/view/", "Flights", new Stage());
+            ViewLoader.showStage(model.getFlights(), "/view/ExploreFlightsView.fxml", "Flights", new Stage());
         } catch (IOException ex) {
             ViewLoader.showErrorWindow(new ErrorModel(ex,"IO Exception Error"));
         }
@@ -41,7 +39,7 @@ public class AgencyController extends Controller<Agency> {
     @FXML
     private void handleDestinations(ActionEvent event){
         try {
-            ViewLoader.showStage(model.getDestinations(), "/view/", "Flights", new Stage());
+            ViewLoader.showStage(model.getDestinations(), "/view/ExploreDestinationsView.fxml", "Flights", new Stage());
         } catch (IOException ex) {
             ViewLoader.showErrorWindow(new ErrorModel(ex,"IO Exception Error"));
         }
@@ -49,7 +47,7 @@ public class AgencyController extends Controller<Agency> {
     @FXML
     private void handleTrips(ActionEvent event){
         try {
-            ViewLoader.showStage(new Trip(model), "/view/", "Flights", new Stage());
+            ViewLoader.showStage(new Trip(model), "/view/BookTripView.fxml", "Flights", new Stage());
         } catch (IOException ex) {
             ViewLoader.showErrorWindow(new ErrorModel(ex,"IO Exception Error"));
         }
