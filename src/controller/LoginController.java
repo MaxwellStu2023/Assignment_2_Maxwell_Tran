@@ -50,11 +50,13 @@ public class LoginController extends Controller<Agency> {
                     ViewLoader.showStage(model, "/view/AgencyView.fxml", "Agency", new Stage());
                 } catch (IOException e) {
                     ViewLoader.showErrorWindow(new ErrorModel(e, "IO Exception Error"));
+                    e.printStackTrace();
                 }
             }
         }
         catch (InvalidCredentialsException e) {
             ViewLoader.showErrorWindow(new ErrorModel(e, "Wrong Credentials"));
+            e.printStackTrace();
         }
     }
 }

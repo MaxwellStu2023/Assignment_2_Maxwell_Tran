@@ -7,6 +7,7 @@ import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.stage.Stage;
 import model.Administrator;
 import model.Administrators;
@@ -22,6 +23,7 @@ public class AgencyController extends Controller<Agency> {
     @FXML private Button trip;
     @FXML private Button flights;
     @FXML private Button destinations;
+    @FXML private Label Heading;
     public final Agency getAgency(){
         return model;
     }
@@ -57,9 +59,12 @@ public class AgencyController extends Controller<Agency> {
     private void handleExit(ActionEvent event){
         Platform.exit();
     }
-//    @Override
-//    public String toString(){
-//        return "Hi " + getUser().getName() + "welcome to the Prog2 Travel Agency";
+
+//    @FXML
+//    public void initialize(){
+//        if (Heading != null){
+//            Heading.setText("Hi " + getUser().getName() + "welcome to the Prog2 Travel Agency");
+//        }
 //    }
 
 

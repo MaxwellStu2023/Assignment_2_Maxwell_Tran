@@ -9,6 +9,17 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.control.*?>
 
-<VBox alignment="CENTER" styleClass="background" prefHeight="200.0" prefWidth="600.0" spacing="20" xmlns:fx="http://javafx.com/fxml/1">
-        
-</VBox>
+<GridPane fx:controller="controller.Destinations.ExploreDestinationsController" alignment="CENTER" styleClass="background" prefHeight="200.0" prefWidth="600.0"  xmlns:fx="http://javafx.com/fxml/1">
+    <Separator/>
+    <Label text="Hi ${controller.agency.loggedInUser} welcome to the Prog2 Travel Agency" textAlignment="CENTER"/>
+    <Separator/>
+    <Button GridPane.rowIndex="2" GridPane.columnIndex="0" text="View All Destinations" fx:id="ViewAllDestinations" onAction="#handleDestinationAllView" />
+    <Button GridPane.rowIndex="2" GridPane.columnIndex="1" text="View Filtered Destinations" fx:id="ViewFilterDestinations" onAction="#handleDestinationFilterView"/>
+    <Button GridPane.rowIndex="2" GridPane.columnIndex="2" text="Add Destination" fx:id="AddDestination" onAction="#handleDestinationAdd"/>
+    <Button GridPane.rowIndex="2" GridPane.columnIndex="3" text="Remove Destination" fx:id="RemoveDestination" onAction="#handleDestinationRemove"/>
+    <Button GridPane.rowIndex="2" GridPane.columnIndex="4" text="Close" fx:id="DestinationExit" onAction="#handleDestinationExit"/>
+
+    <stylesheets>
+        <URL value="@/view/style.css"/>
+    </stylesheets>
+</GridPane>
