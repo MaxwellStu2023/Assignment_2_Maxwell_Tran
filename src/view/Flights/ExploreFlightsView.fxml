@@ -9,6 +9,14 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.control.*?>
 
-<VBox alignment="CENTER" styleClass="background" prefHeight="200.0" prefWidth="600.0" spacing="20" xmlns:fx="http://javafx.com/fxml/1">
-       
-</VBox>
+<GridPane fx:controller="controller.Flights.ExploreFlightsController" alignment="CENTER" styleClass="background" prefHeight="200.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1">
+    <Separator/>
+    <Label text="Hi ${controller.agency.loggedInUser} welcome to the Prog2 Travel Agency" textAlignment="CENTER"/>
+    <Separator/>
+    <Button GridPane.rowIndex="2" GridPane.columnIndex="0" text="View All Flights" fx:id="ViewAllFlights" onAction="#handleFlightAllView" />
+    <Button GridPane.rowIndex="2" GridPane.columnIndex="1" text="View Flights by Country" fx:id="ViewFilterFlights" onAction="#handleFlightFilterView"/>
+    <Button GridPane.rowIndex="2" GridPane.columnIndex="1" text="View Flights by Country" fx:id="AddFlight" onAction="#handleAddFlight"/>
+    <Button GridPane.rowIndex="2" GridPane.columnIndex="2" text="Remove Flight" fx:id="RemoveFlight" onAction="#handleRemoveFlight"/>
+    <Button GridPane.rowIndex="2" GridPane.columnIndex="3" text="Close" fx:id="FlightExit" onAction="#handleFlightExit"/>
+
+</GridPane>

@@ -31,15 +31,16 @@ public class AgencyController extends Controller<Agency> {
     @FXML
     private void handleFlights(ActionEvent event){
         try {
-            ViewLoader.showStage(model.getFlights(), "/view/ExploreFlightsView.fxml", "Flights", new Stage());
+            ViewLoader.showStage(model.getFlights(), "/view/FLights/ExploreFlightsView.fxml", "Flights", new Stage());
         } catch (IOException ex) {
+            ex.printStackTrace();
             ViewLoader.showErrorWindow(new ErrorModel(ex,"IO Exception Error"));
         }
     }
     @FXML
     private void handleDestinations(ActionEvent event){
         try {
-            ViewLoader.showStage(model.getDestinations(), "/view/ExploreDestinationsView.fxml", "Flights", new Stage());
+            ViewLoader.showStage(model.getDestinations(), "/view/Destinations/ExploreDestinationsView.fxml", "Flights", new Stage());
         } catch (IOException ex) {
             ViewLoader.showErrorWindow(new ErrorModel(ex,"IO Exception Error"));
         }
@@ -47,7 +48,7 @@ public class AgencyController extends Controller<Agency> {
     @FXML
     private void handleTrips(ActionEvent event){
         try {
-            ViewLoader.showStage(new Trip(model), "/view/BookTripView.fxml", "Flights", new Stage());
+            ViewLoader.showStage(new Trip(model), "/view/Trip/BookTripView.fxml", "Flights", new Stage());
         } catch (IOException ex) {
             ViewLoader.showErrorWindow(new ErrorModel(ex,"IO Exception Error"));
         }
