@@ -20,4 +20,8 @@
     <Button GridPane.rowIndex="2" GridPane.columnIndex="1" text="Explore Destinations" fx:id="destinations" onAction="#handleDestinations"/>
     <Button GridPane.rowIndex="2" GridPane.columnIndex="2" text="Book a Trip" fx:id="trip" onAction="#handleTrips"/>
     <Button GridPane.rowIndex="2" GridPane.columnIndex="3" text="Exit" fx:id="exit" onAction="#handleExit"/>
+
+    <stylesheets>
+        <URL value="@style.css"/>
+    </stylesheets>
 </GridPane>
