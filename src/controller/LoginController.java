@@ -18,7 +18,7 @@ import javax.swing.*;
 import javax.swing.text.View;
 import java.io.IOException;
 
-public class LoginController extends Controller<Administrators> {
+public class LoginController extends Controller<Agency> {
     @FXML
     private Button login;
     @FXML
@@ -26,8 +26,12 @@ public class LoginController extends Controller<Administrators> {
     @FXML
     private PasswordField password;
 
-    public Administrators getAdministrator() {
+    public Agency getAgency() {
         return model;
+    }
+
+    public Administrators getAdministrators(){
+        return model.getAdministrators();
     }
 
     private String getUsername() {
@@ -41,12 +45,11 @@ public class LoginController extends Controller<Administrators> {
     @FXML
     private void handleLogin(ActionEvent event) {
         try {
-            if (getAdministrator().hasAdministrator(getUsername(), getPassword())) {
+            if (getAdministrators().hasAdministrator(getUsername(), getPassword())) {
                 try {
                     ViewLoader.showStage(model, "/view/AgencyView.fxml", "Agency", new Stage());
-                    }
-                catch (IOException e) {
-                    ViewLoader.showErrorWindow(new ErrorModel(e,"IO Exception Error"));
+                } catch (IOException e) {
+                    ViewLoader.showErrorWindow(new ErrorModel(e, "IO Exception Error"));
                 }
             }
         }
