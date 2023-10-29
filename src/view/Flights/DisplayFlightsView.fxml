@@ -9,8 +9,30 @@
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.control.*?>
-<?import javafx.geometry.Insets?>  
+<?import javafx.geometry.Insets?>
 
-<VBox alignment="CENTER" styleClass="background" prefHeight="700.0" prefWidth="600.0" spacing="20" xmlns:fx="http://javafx.com/fxml/1">
-       
-</VBox>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<GridPane fx:controller="controller.Flights.DisplayFlightsController" alignment="CENTER" styleClass="background" prefHeight="700.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1">
+       <Label text="Flights" styleClass="heading" />
+    <TableView fx:id="FlightsAllTV" prefWidth="500" prefHeight="200" items="${controller.flights.flights}">
+        <columns>
+            <TableColumn text="Airline">
+
+            </TableColumn>
+            <TableColumn text="Flight Number">
+                <cellValueFactory>
+                    <PropertyValueFactory property=""
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn text="Takeoff Country">
+
+            </TableColumn>
+            <TableColumn text="Landing Country">
+
+            </TableColumn>
+            <TableColumn text="Cost">
+
+            </TableColumn>
+        </columns>
+    </TableView>
+</GridPane>

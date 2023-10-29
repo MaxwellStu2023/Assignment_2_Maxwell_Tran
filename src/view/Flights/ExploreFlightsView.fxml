@@ -15,8 +15,8 @@
     <Separator/>
     <Button GridPane.rowIndex="2" GridPane.columnIndex="0" text="View All Flights" fx:id="ViewAllFlights" onAction="#handleFlightAllView" />
     <Button GridPane.rowIndex="2" GridPane.columnIndex="1" text="View Flights by Country" fx:id="ViewFilterFlights" onAction="#handleFlightFilterView"/>
-    <Button GridPane.rowIndex="2" GridPane.columnIndex="1" text="View Flights by Country" fx:id="AddFlight" onAction="#handleAddFlight"/>
-    <Button GridPane.rowIndex="2" GridPane.columnIndex="2" text="Remove Flight" fx:id="RemoveFlight" onAction="#handleRemoveFlight"/>
-    <Button GridPane.rowIndex="2" GridPane.columnIndex="3" text="Close" fx:id="FlightExit" onAction="#handleFlightExit"/>
+    <Button GridPane.rowIndex="2" GridPane.columnIndex="2" text="Add Flight" fx:id="AddFlight" onAction="#handleFlightAdd"/>
+    <Button GridPane.rowIndex="2" GridPane.columnIndex="3" text="Remove Flight" fx:id="RemoveFlight" onAction="#handleFlightRemove"/>
+    <Button GridPane.rowIndex="2" GridPane.columnIndex="4" text="Close" fx:id="FlightExit" onAction="#handleFlightExit"/>
 
 </GridPane>
