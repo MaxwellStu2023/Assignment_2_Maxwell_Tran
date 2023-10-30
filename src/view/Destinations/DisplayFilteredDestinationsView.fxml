@@ -9,6 +9,28 @@
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox alignment="CENTER" styleClass="background" prefHeight="800.0" prefWidth="600.0" spacing="20" xmlns:fx="http://javafx.com/fxml/1">
-                
-</VBox>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<GridPane fx:controller="controller.Destinations.DisplayDestinationsController" alignment="CENTER" styleClass="background" prefHeight="800.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1">
+    <Separator/>
+    <Label text="Filtered Destinations" alignment="CENTER" GridPane.rowIndex="1"/>
+    <Separator/>
+    <Label text="Country" alignment="CENTER" GridPane.rowIndex="2"/>
+    <TextField fx:id="Filter" GridPane.rowIndex="3"/>
+    <TableView GridPane.rowIndex="4" fx:id="DestinationsFilteredTV" prefHeight="200">
+        <columns>
+            <TableColumn text="Name">
+                <cellValueFactory>
+                    <PropertyValueFactory property="name"/>
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn text="Country">
+                <cellValueFactory>
+                    <PropertyValueFactory property="country"/>
+                </cellValueFactory>
+            </TableColumn>
+        </columns>
+    </TableView>
+    <stylesheets>
+        <URL value="@/view/style.css"/>
+    </stylesheets>
+</GridPane>

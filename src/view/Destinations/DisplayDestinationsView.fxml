@@ -8,8 +8,27 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.image.*?>
-<?import javafx.geometry.Insets?>  
+<?import javafx.geometry.Insets?>
 
-<VBox alignment="CENTER" styleClass="background" prefHeight="700.0" prefWidth="600.0" spacing="20" xmlns:fx="http://javafx.com/fxml/1">
-           
-</VBox>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<GridPane fx:controller="controller.Destinations.DisplayDestinationsController" alignment="CENTER" styleClass="background" prefHeight="700.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1">
+    <Label text="Destinations" styleClass="heading" />
+    <TableView fx:id="DestinationsAllTV" prefHeight="200">
+        <columns>
+            <TableColumn text="Name">
+                <cellValueFactory>
+                    <PropertyValueFactory property="name"/>
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn text="Country">
+                <cellValueFactory>
+                    <PropertyValueFactory property="country"/>
+                </cellValueFactory>
+            </TableColumn>
+        </columns>
+    </TableView>
+
+    <stylesheets>
+        <URL value="@/view/style.css"/>
+    </stylesheets>
+</GridPane>

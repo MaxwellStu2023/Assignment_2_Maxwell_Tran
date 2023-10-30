@@ -3,14 +3,11 @@ package controller.Flights;
 
 import au.edu.uts.ap.javafx.Controller;
 import javafx.collections.ObservableList;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import model.Flight;
 import model.Flights;
-
-import java.util.Observable;
 
 public class DisplayFlightsController extends Controller<Flights> {
 
@@ -34,15 +31,15 @@ public class DisplayFlightsController extends Controller<Flights> {
         if (FlightsAllTV != null) {
             FlightsAllTV.setItems(model.getFlights());
         }
-//        if (FlightsFilteredTV != null) {
-//            FlightsFilteredTV.setItems(model.getFilteredFlights(Filter.textProperty().addListener(observable -> filterFlights()));
-//        }
-//    }
-//
-//    public void filterFlights(){
-//        if (Filter.getText().toLowerCase().contains(model.getFlight().getAirline())){
-//            model.getFilteredFlights().add(new Flight())
-//        }
-//    }
+        if (FlightsFilteredTV != null) {
+            Filter.textProperty().addListener(observable -> FlightsFilteredTV.setItems(filterFlights()));
+        }
     }
+
+    private ObservableList<Flight> filterFlights(){
+        if (Filter.getText() != null || !Filter.getText().isEmpty()){
+            model.getFilteredFlights(Filter.getText());
+        }
+            return model.getFlights();
+        }
 }

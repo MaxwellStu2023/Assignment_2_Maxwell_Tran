@@ -9,6 +9,17 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.control.*?>
 
-<VBox alignment="CENTER" styleClass="background" prefHeight="200.0" prefWidth="600.0" spacing="20" xmlns:fx="http://javafx.com/fxml/1">
+<GridPane fx:controller="controller.Trip.BookTripController" alignment="CENTER" styleClass="background" prefHeight="200.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1">
+    <Separator/>
+    <Label text="Book a Trip" textAlignment="CENTER"/>
+    <Separator/>
+    <Button GridPane.rowIndex="2" GridPane.columnIndex="0" text="Add a Destination" fx:id="AddDestination" onAction="#handleAddTripDestination" />
+    <Button GridPane.rowIndex="2" GridPane.columnIndex="1" text="Remove a Destination" fx:id="RemoveDestination" onAction="#handleRemoveTripDestination"/>
+    <Button GridPane.rowIndex="2" GridPane.columnIndex="2" text="Add Connecting Flight" fx:id="AddConnectingFlight" onAction="#handleAddConnectingFlight"/>
+    <Button GridPane.rowIndex="2" GridPane.columnIndex="3" text="View Trip" fx:id="ViewTrip" onAction="#handleViewTrip"/>
+    <Button GridPane.rowIndex="2" GridPane.columnIndex="4" text="Close" fx:id="TripExit" onAction="#handleTripExit"/>
 
-</VBox>
+    <stylesheets>
+        <URL value="@/view/style.css"/>
+    </stylesheets>
+</GridPane>

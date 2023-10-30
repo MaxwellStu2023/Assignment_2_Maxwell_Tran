@@ -11,6 +11,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.geometry.Insets?>  
 
-<VBox alignment="CENTER" styleClass="background" prefHeight="700.0" prefWidth="600.0" spacing="20" xmlns:fx="http://javafx.com/fxml/1">
-       
+<VBox fx:controller="controller.Trip.DisplayTripController" alignment="CENTER" styleClass="background" prefHeight="700.0" prefWidth="600.0" spacing="20" xmlns:fx="http://javafx.com/fxml/1">
+       <Label text="Your Trip" styleClass="heading"/>
+    <ListView fx:id="TripList"/>
 </VBox>
