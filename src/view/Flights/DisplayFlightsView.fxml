@@ -12,9 +12,13 @@
 <?import javafx.geometry.Insets?>
 
 <?import javafx.scene.control.cell.PropertyValueFactory?>
-<GridPane fx:controller="controller.Flights.DisplayFlightsController" alignment="CENTER" styleClass="background" prefHeight="700.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1">
-       <Label text="Flights" styleClass="heading" />
-    <TableView fx:id="FlightsAllTV" prefHeight="200">
+<VBox fx:controller="controller.Flights.DisplayFlightsController" alignment="CENTER" styleClass="background" prefHeight="700.0" spacing="20" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1">
+    <ImageView>
+        <Image url="/image/flight.png"/>
+    </ImageView>
+    <Label text="Flights" styleClass="heading" />
+    <HBox alignment="CENTER" maxWidth="400">
+    <TableView fx:id="FlightsAllTV">
         <columns>
             <TableColumn text="Airline">
                 <cellValueFactory>
@@ -43,8 +47,8 @@
             </TableColumn>
         </columns>
     </TableView>
-
+    </HBox>
     <stylesheets>
         <URL value="@/view/style.css"/>
     </stylesheets>
-</GridPane>
+</VBox>

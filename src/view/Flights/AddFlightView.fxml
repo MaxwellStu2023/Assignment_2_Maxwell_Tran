@@ -8,24 +8,44 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.control.*?>
 
-<GridPane fx:controller="controller.Flights.ModifyFlightsController" alignment="CENTER" styleClass="background" prefHeight="420.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1">
-        <Separator/>
+<VBox fx:controller="controller.Flights.ModifyFlightsController" alignment="CENTER" styleClass="background" spacing="20" prefHeight="420.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1">
+    <ImageView>
+        <Image url="/image/flight.png"/>
+    </ImageView>
+    <Separator/>
             <Label text="Add a Flight" styleClass="heading"/>
         <Separator/>
-    <Label text="Airline" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
-    <TextField GridPane.rowIndex="1" GridPane.columnIndex="1" fx:id="AddAirline"/>
-    <Label text="Flight Number" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
-    <TextField GridPane.rowIndex="2" GridPane.columnIndex="1" fx:id="AddNumber"/>
-    <Label text="Takeoff" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
-    <TextField GridPane.rowIndex="3" GridPane.columnIndex="1" fx:id="AddTakeoff"/>
-    <Label text="Landing" GridPane.columnIndex="0" GridPane.rowIndex="4"/>
-    <TextField GridPane.rowIndex="4" GridPane.columnIndex="1" fx:id="AddLanding"/>
-    <Label  text="Cost" GridPane.columnIndex="0" GridPane.rowIndex="5"/>
-    <TextField GridPane.rowIndex="5" GridPane.columnIndex="1" fx:id="AddCost"/>
-    <Button GridPane.rowIndex="6" GridPane.columnIndex="0" fx:id="AddButton" text="Add Flight" onAction="#handleAddFlight" alignment="BOTTOM_LEFT"/>
-    <Button GridPane.rowIndex="6" GridPane.columnIndex="1" fx:id="CloseAddButton" text="Cancel" onAction="#CloseAddFlight" alignment="BOTTOM_RIGHT"/>
+    <HBox alignment="CENTER" spacing="10" maxWidth="300">
+        <Label text="Airline" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+        <TextField GridPane.rowIndex="1" GridPane.columnIndex="1" fx:id="AddAirline"/>
+    </HBox>
+    <HBox alignment="CENTER" spacing="10" maxWidth="250">
+        <Label text="Flight Number" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+        <TextField GridPane.rowIndex="2" GridPane.columnIndex="1" fx:id="AddNumber"/>
+    </HBox>
+
+    <HBox alignment="CENTER" spacing="10" maxWidth="300">
+        <Label text="Takeoff" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
+        <TextField GridPane.rowIndex="3" GridPane.columnIndex="1" fx:id="AddTakeoff"/>
+    </HBox>
+
+    <HBox alignment="CENTER" spacing="10" maxWidth="300">
+        <Label text="Landing" GridPane.columnIndex="0" GridPane.rowIndex="4"/>
+        <TextField GridPane.rowIndex="4" GridPane.columnIndex="1" fx:id="AddLanding"/>
+    </HBox>
+
+    <HBox alignment="CENTER" spacing="10" maxWidth="300">
+        <Label  text="Cost" GridPane.columnIndex="0" GridPane.rowIndex="5"/>
+        <TextField GridPane.rowIndex="5" GridPane.columnIndex="1" fx:id="AddCost"/>
+    </HBox>
+
+    <HBox alignment="CENTER" spacing="10" maxWidth="300">
+        <Button GridPane.rowIndex="6" GridPane.columnIndex="0" fx:id="AddButton" text="Add Flight" onAction="#handleAddFlight" alignment="BOTTOM_LEFT"/>
+        <Button GridPane.rowIndex="6" GridPane.columnIndex="1" fx:id="CloseAddButton" text="Cancel" onAction="#CloseAddFlight" alignment="BOTTOM_RIGHT"/>
+    </HBox>
+
 
     <stylesheets>
         <URL value="@/view/style.css"/>
     </stylesheets>
-</GridPane>
+</VBox>

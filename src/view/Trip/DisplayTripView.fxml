@@ -12,6 +12,16 @@
 <?import javafx.geometry.Insets?>  
 
 <VBox fx:controller="controller.Trip.DisplayTripController" alignment="CENTER" styleClass="background" prefHeight="700.0" prefWidth="600.0" spacing="20" xmlns:fx="http://javafx.com/fxml/1">
-       <Label text="Your Trip" styleClass="heading"/>
+    <ImageView>
+        <Image url="/image/trip.png"/>
+    </ImageView>
+
+    <Label text="Your Trip" styleClass="heading"/>
+    <HBox alignment="CENTER">
     <ListView fx:id="TripList"/>
+    </HBox>
+
+    <stylesheets>
+        <URL value="@/view/style.css"/>
+    </stylesheets>
 </VBox>

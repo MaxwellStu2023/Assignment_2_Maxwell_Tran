@@ -31,6 +31,7 @@ public class AgencyController extends Controller<Agency> {
     public Administrator getUser(){
         return model.getLoggedInUser();
     }
+
     @FXML
     private void handleFlights(ActionEvent event){
         try {
@@ -60,13 +61,6 @@ public class AgencyController extends Controller<Agency> {
     private void handleExit(ActionEvent event){
         Platform.exit();
     }
-
-//    @FXML
-//    public void initialize(){
-//        if (Heading != null){
-//            Heading.setText("Hi " + getUser().getName() + "welcome to the Prog2 Travel Agency");
-//        }
-//    }
 
 
 }

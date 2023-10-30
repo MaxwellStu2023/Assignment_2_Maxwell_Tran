@@ -6,6 +6,9 @@ import au.edu.uts.ap.javafx.ViewLoader;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
+import model.Administrator;
+import model.Administrators;
+import model.Agency;
 import model.Destinations;
 import model.Exceptions.ErrorModel;
 
@@ -24,6 +27,9 @@ public class ExploreDestinationsController extends Controller<Destinations> {
     @FXML
     Button DestinationExit;
 
+    public Agency getAgency(){
+        return model.getAgency();
+    }
     @FXML
     public void handleDestinationAllView(){
         try {

@@ -7,6 +7,8 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
+import model.Administrator;
+import model.Agency;
 import model.Exceptions.ErrorModel;
 import model.Flights;
 
@@ -24,6 +26,9 @@ public class ExploreFlightsController extends Controller<Flights> {
     @FXML
     Button FlightExit;
 
+    public Agency getAgency(){
+        return model.getAgency();
+    }
     @FXML
     private void handleFlightAllView(ActionEvent event) {
         try {

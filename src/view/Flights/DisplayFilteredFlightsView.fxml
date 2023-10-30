@@ -11,12 +11,18 @@
 
 <?import javafx.scene.text.Text?>
 <?import javafx.scene.control.cell.PropertyValueFactory?>
-<GridPane fx:controller="controller.Flights.DisplayFlightsController" alignment="CENTER" styleClass="background" prefHeight="800.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1">
+<VBox fx:controller="controller.Flights.DisplayFlightsController" alignment="CENTER" styleClass="background" prefHeight="800.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1">
+    <ImageView>
+        <Image url="/image/flight.png"/>
+    </ImageView>
     <Separator/>
-    <Label text="Filtered Flights" alignment="CENTER" GridPane.rowIndex="1"/>
+    <Label text="Filtered Flights" alignment="CENTER" GridPane.rowIndex="1" styleClass="heading"/>
     <Separator/>
-    <Label text="Country" alignment="CENTER" GridPane.rowIndex="2"/>
-    <TextField fx:id="Filter" GridPane.rowIndex="3"/>
+    <HBox alignment="CENTER">
+        <Label text="Country" alignment="CENTER" GridPane.rowIndex="2"/>
+        <TextField fx:id="Filter" GridPane.rowIndex="3"/>
+    </HBox>
+    <HBox alignment="CENTER">
     <TableView GridPane.rowIndex="4" fx:id="FlightsFilteredTV" prefHeight="200">
         <columns>
             <TableColumn text="Airline">
@@ -46,7 +52,8 @@
             </TableColumn>
         </columns>
     </TableView>
+    </HBox>
     <stylesheets>
         <URL value="@/view/style.css"/>
     </stylesheets>
-</GridPane>
+</VBox>

@@ -9,18 +9,18 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.control.*?>
 
-<VBox fx:controller="controller.AgencyController" alignment="CENTER" styleClass="background" prefHeight="200.0" prefWidth="800.0" xmlns:fx="http://javafx.com/fxml/1">
+<VBox  fx:controller="controller.AgencyController" alignment="CENTER" styleClass="background" prefHeight="200.0" prefWidth="800.0" xmlns:fx="http://javafx.com/fxml/1">
     <ImageView>
         <Image url="/image/agency.png"/>
     </ImageView>
     <Separator/>
-    <Label fx:id="Heading" text="Welcome" textAlignment="CENTER"/>
-    <HBox alignment="CENTER">
+    <Label fx:id="Heading" text="${controller.user.name}" textAlignment="CENTER"/>
+    <HBox alignment="CENTER" prefWidth="800">
     <Separator/>
-    <Button text="Explore Flights" fx:id="flights" onAction="#handleFlights"/>
-    <Button GridPane.rowIndex="2" GridPane.columnIndex="1" text="Explore Destinations" fx:id="destinations" onAction="#handleDestinations"/>
-    <Button GridPane.rowIndex="2" GridPane.columnIndex="2" text="Book a Trip" fx:id="trip" onAction="#handleTrips"/>
-    <Button GridPane.rowIndex="2" GridPane.columnIndex="3" text="Exit" fx:id="exit" onAction="#handleExit"/>
+    <Button text="Explore Flights" fx:id="flights" onAction="#handleFlights"  prefWidth="200"/>
+    <Button GridPane.rowIndex="2" GridPane.columnIndex="1" text="Explore Destinations" fx:id="destinations" onAction="#handleDestinations" prefWidth="200"/>
+    <Button GridPane.rowIndex="2" GridPane.columnIndex="2" text="Book a Trip" fx:id="trip" onAction="#handleTrips" prefWidth="200"/>
+    <Button GridPane.rowIndex="2" GridPane.columnIndex="3" text="Exit" fx:id="exit" onAction="#handleExit" prefWidth="200"/>
     </HBox>
     <stylesheets>
         <URL value="@style.css"/>

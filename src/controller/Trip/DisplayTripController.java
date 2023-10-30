@@ -2,6 +2,7 @@ package controller.Trip;
 
 
 import au.edu.uts.ap.javafx.Controller;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.ListView;
 import model.Itinery;
@@ -17,7 +18,8 @@ public class DisplayTripController extends Controller<Trip> {
         return model;
     }
 
-    private void initialize(){
+    public void initialize(){
         TripList.setItems(model.getItinery());
     }
+
 }
