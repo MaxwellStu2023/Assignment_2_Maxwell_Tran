@@ -24,6 +24,7 @@ public class AgencyController extends Controller<Agency> {
     @FXML private Button flights;
     @FXML private Button destinations;
     @FXML private Label Heading;
+
     public final Agency getAgency(){
         return model;
     }
