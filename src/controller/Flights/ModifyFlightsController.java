@@ -69,7 +69,6 @@ public class ModifyFlightsController extends Controller<Flights> {
             model.addFlight(new Flight(getAirline(), getNumber(), getLanding(), getTakeoff(), getCost()));
             stage.close();
         } catch (DuplicateItemException e) {
-            e.printStackTrace();
             ViewLoader.showErrorWindow(new ErrorModel(e, "Duplicate Flight"));
         }
     }
@@ -124,7 +123,6 @@ public class ModifyFlightsController extends Controller<Flights> {
                 stage.close();
             } catch (ItemNotFoundException e) {
                 ViewLoader.showErrorWindow(new ErrorModel(e, "Flight Not Found"));
-                e.printStackTrace();
             }
         }
     }

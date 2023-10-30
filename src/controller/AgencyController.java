@@ -37,7 +37,6 @@ public class AgencyController extends Controller<Agency> {
         try {
             ViewLoader.showStage(model.getFlights(), "/view/FLights/ExploreFlightsView.fxml", "Flights", new Stage());
         } catch (IOException ex) {
-            ex.printStackTrace();
             ViewLoader.showErrorWindow(new ErrorModel(ex,"IO Exception Error"));
         }
     }

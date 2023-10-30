@@ -49,7 +49,6 @@ public class ModifyDestinationsController extends Controller<Destinations> {
             model.addDestination(new Destination(getName(), getCountry()));
             stage.close();
         } catch (DuplicateItemException e) {
-            e.printStackTrace();
             ViewLoader.showErrorWindow(new ErrorModel(e, "Duplicate Flight"));
         }
     }
@@ -95,7 +94,6 @@ public class ModifyDestinationsController extends Controller<Destinations> {
                 stage.close();
             } catch (ItemNotFoundException e) {
                 ViewLoader.showErrorWindow(new ErrorModel(e, "Flight Not Found"));
-                e.printStackTrace();
             }
         }
     }

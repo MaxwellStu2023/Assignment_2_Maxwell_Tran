@@ -43,7 +43,6 @@ public class ExploreFlightsController extends Controller<Flights> {
         try {
             ViewLoader.showStage(model, "/view/Flights/DisplayFilteredFlightsView.fxml", "View Filtered Flights", new Stage());
         } catch (IOException e) {
-            e.printStackTrace();
             ViewLoader.showErrorWindow(new ErrorModel(e, "IO Exception Error"));
         }
     }
@@ -53,7 +52,6 @@ public class ExploreFlightsController extends Controller<Flights> {
         try {
             ViewLoader.showStage(model, "/view/Flights/AddFlightView.fxml", "Add Flight", new Stage());
         } catch (IOException e) {
-            e.printStackTrace();
             ViewLoader.showErrorWindow(new ErrorModel(e, "IO Exception Error"));
         }
     }
@@ -63,7 +61,6 @@ public class ExploreFlightsController extends Controller<Flights> {
         try {
             ViewLoader.showStage(model, "/view/Flights/RemoveFlightView.fxml", "Remove Flight", new Stage());
         } catch (IOException e) {
-            e.printStackTrace();
             ViewLoader.showErrorWindow(new ErrorModel(e, "IO Exception Error"));
         }
     }

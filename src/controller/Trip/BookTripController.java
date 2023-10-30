@@ -40,7 +40,6 @@ public class BookTripController extends Controller<Trip> {
         try {
             ViewLoader.showStage(model.getDestinations(), "/view/Destinations/RemoveDestinationView.fxml", "Remove a Destination", new Stage());
         } catch (IOException e) {
-            e.printStackTrace();
             ViewLoader.showErrorWindow(new ErrorModel(e, "IO Exception Error"));
         }
     }
@@ -51,10 +50,8 @@ public class BookTripController extends Controller<Trip> {
             model.addConnectingFlights();
         } catch (DuplicateItemException e) {
             ViewLoader.showErrorWindow(new ErrorModel(e, "Duplicate Flights"));
-            e.printStackTrace();
         } catch (InsufficientDestinationsException e) {
             ViewLoader.showErrorWindow(new ErrorModel(e, "Insufficient amount of Destinations"));
-            e.printStackTrace();
         }
     }
 
@@ -63,7 +60,6 @@ public class BookTripController extends Controller<Trip> {
         try {
             ViewLoader.showStage(model, "/view/Trip/DisplayTripView.fxml", "View Trip", new Stage());
         } catch (IOException e) {
-            e.printStackTrace();
             ViewLoader.showErrorWindow(new ErrorModel(e, "IO Exception Error"));
         }
     }
