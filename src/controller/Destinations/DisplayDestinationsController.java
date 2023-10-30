@@ -4,6 +4,7 @@ package controller.Destinations;
 import au.edu.uts.ap.javafx.Controller;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
@@ -18,6 +19,10 @@ public class DisplayDestinationsController extends Controller<Destinations> {
     private TableView DestinationsFilteredTV;
     @FXML
     private TextField Filter;
+    @FXML
+    Button CloseViewAllDestinations;
+    @FXML
+    Button CloseViewFilteredDestinations;
 
     private Destinations getDestinations() {
         return model;
@@ -33,14 +38,16 @@ public class DisplayDestinationsController extends Controller<Destinations> {
             DestinationsAllTV.setItems(model.getDestinations());
         }
         if (DestinationsFilteredTV != null) {
-            Filter.textProperty().addListener(observable -> DestinationsFilteredTV.setItems(filterDestinations()));
+            Filter.textProperty().addListener(observable -> DestinationsFilteredTV.setItems(filterDestinations(Filter.getText())));
         }
     }
 
-    private ObservableList<Destination> filterDestinations(){
-        if (Filter.getText() != null || !Filter.getText().isEmpty()){
-            model.getFilteredDestinations(Filter.getText());
-        }
-        return model.getDestinations();
+    public ObservableList<Destination> filterDestinations(String country) {
+        return model.getDestinations().filtered(observable -> observable.getName().toLowerCase().contains(country.toLowerCase()) || observable.getCountry().toLowerCase().contains(country.toLowerCase()));
+    }
+
+    @FXML
+    private void handleCloseDestinationsView(){
+        stage.close();
     }
 }

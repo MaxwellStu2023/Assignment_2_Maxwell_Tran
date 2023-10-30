@@ -38,6 +38,8 @@
         </columns>
     </TableView>
     </HBox>
+
+    <Button text="Close" fx:id="CloseViewFilteredDestinations" onAction="#handleCloseDestinationsView"/>
     <stylesheets>
         <URL value="@/view/style.css"/>
     </stylesheets>

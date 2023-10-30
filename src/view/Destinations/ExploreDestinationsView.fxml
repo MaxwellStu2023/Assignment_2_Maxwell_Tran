@@ -14,7 +14,7 @@
         <Image url="/image/destination.png"/>
     </ImageView>
     <Separator/>
-    <Label text="${controller.agency.loggedInUser.name}" textAlignment="CENTER"/>
+    <Label text="${controller.agency.loggedInUser.name}" textAlignment="CENTER" styleClass="heading"/>
     <Separator/>
     <HBox alignment="CENTER">
     <Button GridPane.rowIndex="2" GridPane.columnIndex="0" text="View All Destinations" fx:id="ViewAllDestinations" onAction="#handleDestinationAllView" />

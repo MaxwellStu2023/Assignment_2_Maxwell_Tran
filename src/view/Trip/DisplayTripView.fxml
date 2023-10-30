@@ -21,6 +21,8 @@
     <ListView fx:id="TripList"/>
     </HBox>
 
+    <Button text="Close" fx:id="CloseTripView" onAction="#handleCloseTripView"/>
+
     <stylesheets>
         <URL value="@/view/style.css"/>
     </stylesheets>

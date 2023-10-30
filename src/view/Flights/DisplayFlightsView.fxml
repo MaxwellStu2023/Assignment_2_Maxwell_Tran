@@ -48,6 +48,8 @@
         </columns>
     </TableView>
     </HBox>
+
+    <Button text="Close" fx:id="CloseViewAllFlights" onAction="#handleCloseFlightView"/>
     <stylesheets>
         <URL value="@/view/style.css"/>
     </stylesheets>

@@ -18,7 +18,7 @@
     <Separator/>
     <Label text="Filtered Flights" alignment="CENTER" GridPane.rowIndex="1" styleClass="heading"/>
     <Separator/>
-    <HBox alignment="CENTER">
+    <HBox alignment="CENTER" spacing="10">
         <Label text="Country" alignment="CENTER" GridPane.rowIndex="2"/>
         <TextField fx:id="Filter" GridPane.rowIndex="3"/>
     </HBox>
@@ -53,6 +53,9 @@
         </columns>
     </TableView>
     </HBox>
+
+    <Button text="Close" fx:id="CloseViewFilteredFlights" onAction="#handleCloseFlightView"/>
+
     <stylesheets>
         <URL value="@/view/style.css"/>
     </stylesheets>

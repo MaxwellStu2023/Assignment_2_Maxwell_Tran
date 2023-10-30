@@ -26,6 +26,8 @@
     <Button GridPane.rowIndex="2" GridPane.columnIndex="4" text="Close" fx:id="TripExit" onAction="#handleTripExit"/>
     </HBox>
 
+    <Button text="Close" fx:id="CloseTripView" onAction="#handleCloseTripView"/>
+
     <stylesheets>
         <URL value="@/view/style.css"/>
     </stylesheets>
