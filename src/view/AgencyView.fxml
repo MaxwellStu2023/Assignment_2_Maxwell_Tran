@@ -15,7 +15,7 @@
         <Image url="/image/agency.png"/>
     </ImageView>
     <Separator/>
-    <Label fx:id="Heading" text="${'Hi ' + controller.user.name + ' welcome to the Prog2 Travel Agency'}" textAlignment="CENTER" styleClass="heading"/>
+    <Label fx:id="heading" textAlignment="CENTER" styleClass="heading"/>
     <HBox alignment="CENTER" prefWidth="800">
     <Separator/>
     <Button text="Explore Flights" fx:id="flights" onAction="#handleFlights"  prefWidth="200"/>

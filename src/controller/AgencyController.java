@@ -24,14 +24,18 @@ public class AgencyController extends Controller<Agency> {
     @FXML private Button trip;
     @FXML private Button flights;
     @FXML private Button destinations;
-    @FXML private Label Heading;
+    @FXML private Label heading;
 
     public final Agency getAgency(){
         return model;
     }
 
-    public Administrator getUser(){
-        return model.getLoggedInUser();
+    public Administrator getUser() {
+            return model.getLoggedInUser();
+        }
+    @FXML
+    private void initialize(){
+    heading.setText("Hi " + getUser().getName() + ", welcome to the Prog2 Travel Agency");
     }
 
     @FXML

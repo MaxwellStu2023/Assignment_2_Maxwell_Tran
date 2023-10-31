@@ -10,12 +10,16 @@
 <?import javafx.scene.control.*?>
 
 
+<?import javafx.scene.text.Text?>
 <VBox fx:controller="controller.Error.ErrorController" alignment="CENTER" styleClass="background" prefHeight="250.0" prefWidth="400.0" spacing="20" xmlns:fx="http://javafx.com/fxml/1">
     <ImageView>
         <Image url="/image/error.png"/>
     </ImageView>
     <Separator/>
-    <Label text="${controller.}" styleClass="heading"/>
+    <Label text="${controller.exception}" styleClass="errorLabel" alignment="CENTER"/>
     <Separator/>
-    <Label text="" />
+    <Label text="${controller.errorMessage}" alignment="CENTER"/>
+    <stylesheets>
+        <URL value="@/view/style.css"/>
+    </stylesheets>
 </VBox>

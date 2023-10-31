@@ -6,15 +6,15 @@ import model.Exceptions.ErrorModel;
 
 public class ErrorController extends Controller<ErrorModel> {
 
-    private ErrorModel getError(){
+    public ErrorModel getError(){
         return model;
     }
 
-    private Exception getException(){
+    public Exception getException(){
         return model.getException();
     }
 
-    private String getErrorMessage(){
+    public String getErrorMessage(){
         return model.getMessage();
     }
 }
