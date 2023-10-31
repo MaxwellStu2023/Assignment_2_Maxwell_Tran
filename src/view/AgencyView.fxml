@@ -16,13 +16,15 @@
     </ImageView>
     <Separator/>
     <Label fx:id="heading" textAlignment="CENTER" styleClass="heading"/>
-    <HBox alignment="CENTER" prefWidth="800">
     <Separator/>
-    <Button text="Explore Flights" fx:id="flights" onAction="#handleFlights"  prefWidth="200"/>
-    <Button GridPane.rowIndex="2" GridPane.columnIndex="1" text="Explore Destinations" fx:id="destinations" onAction="#handleDestinations" prefWidth="200"/>
-    <Button GridPane.rowIndex="2" GridPane.columnIndex="2" text="Book a Trip" fx:id="trip" onAction="#handleTrips" prefWidth="200"/>
-    <Button GridPane.rowIndex="2" GridPane.columnIndex="3" text="Exit" fx:id="exit" onAction="#handleExit" prefWidth="200"/>
+
+    <HBox alignment="CENTER" prefWidth="800">
+        <Button text="Explore Flights" fx:id="flights" onAction="#handleFlights"  prefWidth="200"/>
+        <Button GridPane.rowIndex="2" GridPane.columnIndex="1" text="Explore Destinations" fx:id="destinations" onAction="#handleDestinations" prefWidth="200"/>
+        <Button GridPane.rowIndex="2" GridPane.columnIndex="2" text="Book a Trip" fx:id="trip" onAction="#handleTrips" prefWidth="200"/>
+        <Button GridPane.rowIndex="2" GridPane.columnIndex="3" text="Exit" fx:id="exit" onAction="#handleExit" prefWidth="200"/>
     </HBox>
+
     <stylesheets>
         <URL value="@style.css"/>
     </stylesheets>

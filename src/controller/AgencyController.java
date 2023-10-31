@@ -8,6 +8,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import model.Administrator;
@@ -30,36 +31,42 @@ public class AgencyController extends Controller<Agency> {
         return model;
     }
 
-    public Administrator getUser() {
-            return model.getLoggedInUser();
-        }
+//    public Administrator getUser() {
+//            return model.getLoggedInUser();
+//        }
     @FXML
     private void initialize(){
-    heading.setText("Hi " + getUser().getName() + ", welcome to the Prog2 Travel Agency");
+    heading.setText("Hi " + model.getLoggedInUser().getName() +  ", welcome to the Prog2 Travel Agency");
     }
 
     @FXML
     private void handleFlights(ActionEvent event){
         try {
-            ViewLoader.showStage(model.getFlights(), "/view/FLights/ExploreFlightsView.fxml", "Flights", new Stage());
+            Stage flightStage = new Stage();
+            flightStage.getIcons().add(new Image("/image/flights_icon.png"));
+            ViewLoader.showStage(model.getFlights(), "/view/FLights/ExploreFlightsView.fxml", "Flights", flightStage);
         } catch (IOException ex) {
-            ViewLoader.showErrorWindow(new ErrorModel(ex,"IO Exception Error"));
+            ViewLoader.showErrorWindow(new ErrorModel(ex,"IO Exception Error!"));
         }
     }
     @FXML
     private void handleDestinations(ActionEvent event){
         try {
+            Stage destinationsStage = new Stage();
+            destinationsStage.getIcons().add(new Image("/image/destinations_icon.png"));
             ViewLoader.showStage(model.getDestinations(), "/view/Destinations/ExploreDestinationsView.fxml", "Flights", new Stage());
         } catch (IOException ex) {
-            ViewLoader.showErrorWindow(new ErrorModel(ex,"IO Exception Error"));
+            ViewLoader.showErrorWindow(new ErrorModel(ex,"IO Exception Error!"));
         }
     }
     @FXML
     private void handleTrips(ActionEvent event){
         try {
+            Stage tripStage = new Stage();
+            tripStage.getIcons().add(new Image("/image/trip_icon.png"));
             ViewLoader.showStage(new Trip(model), "/view/Trip/BookTripView.fxml", "Flights", new Stage());
         } catch (IOException ex) {
-            ViewLoader.showErrorWindow(new ErrorModel(ex,"IO Exception Error"));
+            ViewLoader.showErrorWindow(new ErrorModel(ex,"IO Exception Error!"));
         }
     }
     @FXML

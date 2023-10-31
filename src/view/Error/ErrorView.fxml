@@ -15,11 +15,12 @@
     <ImageView>
         <Image url="/image/error.png"/>
     </ImageView>
-    <Separator/>
     <Label text="Error!" alignment="CENTER" styleClass="errorLabel"/>
-    <Label text="${controller.exception}" styleClass="errorLabel" alignment="CENTER"/>
     <Separator/>
+    <Label fx:id="errorCause" styleClass="errorLabel" alignment="CENTER"/>
     <Label text="${controller.errorMessage}" alignment="CENTER"/>
+    <Separator/>
+    <Button text="Close" styleClass="button" fx:id="closeError" onAction="#handleCloseErrorWindow"/>
     <stylesheets>
         <URL value="@/view/style.css"/>
     </stylesheets>

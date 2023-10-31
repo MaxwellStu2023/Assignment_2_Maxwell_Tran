@@ -11,7 +11,7 @@
 
 <?import javafx.scene.text.Text?>
 <?import javafx.scene.control.cell.PropertyValueFactory?>
-<VBox fx:controller="controller.Flights.DisplayFlightsController" alignment="CENTER" styleClass="background" prefHeight="800.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1">
+<VBox fx:controller="controller.Flights.DisplayFlightsController" alignment="CENTER" styleClass="background" spacing="10" prefHeight="800.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1">
     <ImageView>
         <Image url="/image/flight.png"/>
     </ImageView>

@@ -5,6 +5,7 @@ import au.edu.uts.ap.javafx.Controller;
 import au.edu.uts.ap.javafx.ViewLoader;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.stage.Stage;
 import model.Administrator;
 import model.Administrators;
@@ -26,7 +27,13 @@ public class ExploreDestinationsController extends Controller<Destinations> {
     Button RemoveDestination;
     @FXML
     Button DestinationExit;
+    @FXML
+    Label heading;
 
+    @FXML
+    private void initialize(){
+        heading.setText("Hi " + model.getAgency().getLoggedInUser().getName() +  ", welcome to the Destinations Section");
+    }
     public Agency getAgency(){
         return model.getAgency();
     }
@@ -35,7 +42,7 @@ public class ExploreDestinationsController extends Controller<Destinations> {
         try {
             ViewLoader.showStage(model, "/view/Destinations/DisplayDestinationsView.fxml", "All Destinations", new Stage());
         } catch (IOException e) {
-            ViewLoader.showErrorWindow(new ErrorModel(e, "IO Exception Error"));
+            ViewLoader.showErrorWindow(new ErrorModel(e, "IO Exception Error!"));
         }
     }
     @FXML
@@ -43,7 +50,7 @@ public class ExploreDestinationsController extends Controller<Destinations> {
         try {
             ViewLoader.showStage(model, "/view/Destinations/DisplayFilteredDestinationsView.fxml", "Filtered Destinations", new Stage());
         } catch (IOException e) {
-            ViewLoader.showErrorWindow(new ErrorModel(e, "IO Exception Error"));
+            ViewLoader.showErrorWindow(new ErrorModel(e, "IO Exception Error!"));
         }
     }
     @FXML
@@ -51,7 +58,7 @@ public class ExploreDestinationsController extends Controller<Destinations> {
         try {
             ViewLoader.showStage(model, "/view/Destinations/AddDestinationView.fxml", "Add Destination", new Stage());
         } catch (IOException e) {
-            ViewLoader.showErrorWindow(new ErrorModel(e, "IO Exception Error"));
+            ViewLoader.showErrorWindow(new ErrorModel(e, "IO Exception Error!"));
         }
     }
     @FXML
@@ -59,7 +66,7 @@ public class ExploreDestinationsController extends Controller<Destinations> {
         try {
             ViewLoader.showStage(model, "/view/Destinations/RemoveDestinationView.fxml", "Remove Destination", new Stage());
         } catch (IOException e) {
-            ViewLoader.showErrorWindow(new ErrorModel(e, "IO Exception Error"));
+            ViewLoader.showErrorWindow(new ErrorModel(e, "IO Exception Error!"));
         }
     }
     @FXML

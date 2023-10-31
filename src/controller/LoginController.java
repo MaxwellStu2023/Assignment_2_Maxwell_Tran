@@ -7,6 +7,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import model.Administrator;
 import model.Administrators;
@@ -46,7 +47,7 @@ public class LoginController extends Controller<Agency> {
         try {
             return model.getAdministrators().getAdministrator(getUsername(), getPassword());
         } catch (InvalidCredentialsException e) {
-            ViewLoader.showErrorWindow(new ErrorModel(e,"IO Exception Error"));
+            ViewLoader.showErrorWindow(new ErrorModel(e,"IO Exception Error!"));
         }
         return null;
     }
@@ -57,16 +58,18 @@ public class LoginController extends Controller<Agency> {
         try {
             if (getAdministrators().hasAdministrator(getUsername(), getPassword())) {
                 try {
-                    ViewLoader.showStage(model, "/view/AgencyView.fxml", "Agency", new Stage());
+                    Stage agencyStage = new Stage();
+                    agencyStage.getIcons().add(new Image("/image/agency_icon.png"));
                     model.setLoggedInUser((setAdministrator()));
+                    ViewLoader.showStage(model, "/view/AgencyView.fxml", "Agency", agencyStage);
                 } catch (IOException e) {
-                    ViewLoader.showErrorWindow(new ErrorModel(e, "IO Exception Error"));
+                    ViewLoader.showErrorWindow(new ErrorModel(e, "IO Exception Error!"));
                     e.printStackTrace();
                 }
             }
         }
         catch (InvalidCredentialsException e) {
-            ViewLoader.showErrorWindow(new ErrorModel(e, "Wrong Credentials"));
+            ViewLoader.showErrorWindow(new ErrorModel(e, "Wrong Credentials!"));
             e.printStackTrace();
         }
     }

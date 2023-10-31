@@ -13,9 +13,8 @@
     <ImageView>
         <Image url="/image/trip.png"/>
     </ImageView>
-
     <Separator/>
-    <Label text="Book a Trip" textAlignment="CENTER"/>
+    <Label fx:id="heading" textAlignment="CENTER" styleClass="heading"/>
     <Separator/>
 
     <HBox alignment="CENTER">
@@ -25,8 +24,6 @@
     <Button GridPane.rowIndex="2" GridPane.columnIndex="3" text="View Trip" fx:id="ViewTrip" onAction="#handleViewTrip"/>
     <Button GridPane.rowIndex="2" GridPane.columnIndex="4" text="Close" fx:id="TripExit" onAction="#handleTripExit"/>
     </HBox>
-
-    <Button text="Close" fx:id="CloseTripView" onAction="#handleCloseTripView"/>
 
     <stylesheets>
         <URL value="@/view/style.css"/>

@@ -17,12 +17,14 @@
     </ImageView>
 
     <Label text="Your Trip" styleClass="heading"/>
+
     <HBox alignment="CENTER">
     <ListView fx:id="TripList"/>
     </HBox>
-
-    <Button text="Close" fx:id="CloseTripView" onAction="#handleCloseTripView"/>
-
+    <HBox alignment="CENTER">
+        <Button text="View Individual" fx:id="ViewIndividual" onAction="#handleViewIndividual"/>
+        <Button text="Close" fx:id="CloseTripView" onAction="#handleCloseTripView"/>
+    </HBox>
     <stylesheets>
         <URL value="@/view/style.css"/>
     </stylesheets>

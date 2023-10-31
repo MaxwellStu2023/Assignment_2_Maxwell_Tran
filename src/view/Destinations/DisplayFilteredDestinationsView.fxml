@@ -10,12 +10,12 @@
 <?import javafx.scene.layout.*?>
 
 <?import javafx.scene.control.cell.PropertyValueFactory?>
-<VBox fx:controller="controller.Destinations.DisplayDestinationsController" alignment="CENTER" styleClass="background" prefHeight="800.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1">
+<VBox fx:controller="controller.Destinations.DisplayDestinationsController" spacing="10" alignment="CENTER" styleClass="background" prefHeight="800.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1">
     <ImageView>
         <Image url="/image/destination.png"/>
     </ImageView>
     <Separator/>
-    <Label text="Filtered Destinations" alignment="CENTER" GridPane.rowIndex="1"/>
+    <Label text="Filtered Destinations" alignment="CENTER" GridPane.rowIndex="1" styleClass="heading"/>
     <Separator/>
     <HBox alignment="CENTER">
     <Label text="Country" alignment="CENTER" GridPane.rowIndex="2"/>

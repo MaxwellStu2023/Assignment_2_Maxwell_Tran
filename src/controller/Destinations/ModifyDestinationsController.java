@@ -49,7 +49,7 @@ public class ModifyDestinationsController extends Controller<Destinations> {
             model.addDestination(new Destination(getName(), getCountry()));
             stage.close();
         } catch (DuplicateItemException e) {
-            ViewLoader.showErrorWindow(new ErrorModel(e, "Duplicate Flight"));
+            ViewLoader.showErrorWindow(new ErrorModel(e, "Duplicate Destination!"));
         }
     }
     public void initialize() {
@@ -93,7 +93,7 @@ public class ModifyDestinationsController extends Controller<Destinations> {
                 model.removeDestination(model.destination(RemoveName.getText(), RemoveCountry.getText()));
                 stage.close();
             } catch (ItemNotFoundException e) {
-                ViewLoader.showErrorWindow(new ErrorModel(e, "Flight Not Found"));
+                ViewLoader.showErrorWindow(new ErrorModel(e, "Destination Not Found!"));
             }
         }
     }

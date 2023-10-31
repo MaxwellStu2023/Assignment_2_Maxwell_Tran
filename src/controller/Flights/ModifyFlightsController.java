@@ -66,10 +66,14 @@ public class ModifyFlightsController extends Controller<Flights> {
     @FXML
     private void handleAddFlight(ActionEvent event){
         try {
-            model.addFlight(new Flight(getAirline(), getNumber(), getLanding(), getTakeoff(), getCost()));
-            stage.close();
+            try {
+                model.addFlight(new Flight(getAirline(), getNumber(), getLanding(), getTakeoff(), getCost()));
+                stage.close();
+            } catch (NumberFormatException e){
+                ViewLoader.showErrorWindow(new ErrorModel(e, "Enter a Number!"));
+            }
         } catch (DuplicateItemException e) {
-            ViewLoader.showErrorWindow(new ErrorModel(e, "Duplicate Flight"));
+            ViewLoader.showErrorWindow(new ErrorModel(e, "Duplicate Flight!"));
         }
     }
     public void initialize() {
@@ -122,7 +126,7 @@ public class ModifyFlightsController extends Controller<Flights> {
                 model.removeFlight(model.getFlight(RemoveTakeoff.getText(), RemoveLanding.getText()));
                 stage.close();
             } catch (ItemNotFoundException e) {
-                ViewLoader.showErrorWindow(new ErrorModel(e, "Flight Not Found"));
+                ViewLoader.showErrorWindow(new ErrorModel(e, "Flight Not Found!"));
             }
         }
     }

@@ -6,6 +6,7 @@ import au.edu.uts.ap.javafx.ViewLoader;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.stage.Stage;
 import model.Exceptions.DuplicateItemException;
 import model.Exceptions.ErrorModel;
@@ -25,13 +26,20 @@ public class BookTripController extends Controller<Trip> {
     Button ViewTrip;
     @FXML
     Button TripExit;
+    @FXML
+    Label heading;
+
+    @FXML
+    private void initialize(){
+        heading.setText("Hi " + model.getAgency().getLoggedInUser().getName() +  ", welcome to the Trips Section");
+    }
 
     @FXML
     private void handleAddTripDestination(ActionEvent event) {
         try {
             ViewLoader.showStage(model.getDestinations(), "/view/Destinations/AddDestinationView.fxml", "Add a Destination", new Stage());
         } catch (IOException e) {
-            ViewLoader.showErrorWindow(new ErrorModel(e, "IO Exception Error"));
+            ViewLoader.showErrorWindow(new ErrorModel(e, "IO Exception Error!"));
         }
     }
 
@@ -40,7 +48,7 @@ public class BookTripController extends Controller<Trip> {
         try {
             ViewLoader.showStage(model.getDestinations(), "/view/Destinations/RemoveDestinationView.fxml", "Remove a Destination", new Stage());
         } catch (IOException e) {
-            ViewLoader.showErrorWindow(new ErrorModel(e, "IO Exception Error"));
+            ViewLoader.showErrorWindow(new ErrorModel(e, "IO Exception Error!"));
         }
     }
 
@@ -49,9 +57,9 @@ public class BookTripController extends Controller<Trip> {
         try {
             model.addConnectingFlights();
         } catch (DuplicateItemException e) {
-            ViewLoader.showErrorWindow(new ErrorModel(e, "Duplicate Flights"));
+            ViewLoader.showErrorWindow(new ErrorModel(e, "Duplicate Flights!"));
         } catch (InsufficientDestinationsException e) {
-            ViewLoader.showErrorWindow(new ErrorModel(e, "Insufficient amount of Destinations"));
+            ViewLoader.showErrorWindow(new ErrorModel(e, "Insufficient amount of Destinations!"));
         }
     }
 
@@ -60,7 +68,7 @@ public class BookTripController extends Controller<Trip> {
         try {
             ViewLoader.showStage(model, "/view/Trip/DisplayTripView.fxml", "View Trip", new Stage());
         } catch (IOException e) {
-            ViewLoader.showErrorWindow(new ErrorModel(e, "IO Exception Error"));
+            ViewLoader.showErrorWindow(new ErrorModel(e, "IO Exception Error!"));
         }
     }
 
