@@ -30,7 +30,7 @@ public class LoginController extends Controller<Agency> {
         return model;
     }
 
-    public Administrators getAdministrators(){
+    public Administrators getAdministrators() {
         return model.getAdministrators();
     }
 
@@ -42,12 +42,23 @@ public class LoginController extends Controller<Agency> {
         return password.getText();
     }
 
+    private Administrator setAdministrator() {
+        try {
+            return model.getAdministrators().getAdministrator(getUsername(), getPassword());
+        } catch (InvalidCredentialsException e) {
+            ViewLoader.showErrorWindow(new ErrorModel(e,"IO Exception Error"));
+        }
+        return null;
+    }
+
+
     @FXML
     private void handleLogin(ActionEvent event) {
         try {
             if (getAdministrators().hasAdministrator(getUsername(), getPassword())) {
                 try {
                     ViewLoader.showStage(model, "/view/AgencyView.fxml", "Agency", new Stage());
+                    model.setLoggedInUser((setAdministrator()));
                 } catch (IOException e) {
                     ViewLoader.showErrorWindow(new ErrorModel(e, "IO Exception Error"));
                     e.printStackTrace();

@@ -14,7 +14,7 @@
         <Image url="/image/flight.png"/>
     </ImageView>
     <Separator/>
-    <Label text="${controller.agency.loggedInUser.name}" textAlignment="CENTER" styleClass="heading"/>
+    <Label text='${controller.agency.loggedInUser.name}' textAlignment="CENTER" styleClass="heading"/>
     <Separator/>
     <HBox alignment="CENTER" maxWidth="600">
     <Button GridPane.rowIndex="2" GridPane.columnIndex="0" text="View All Flights" fx:id="ViewAllFlights" onAction="#handleFlightAllView" />

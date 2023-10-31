@@ -8,6 +8,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import model.Administrator;
 import model.Administrators;
@@ -28,6 +29,7 @@ public class AgencyController extends Controller<Agency> {
     public final Agency getAgency(){
         return model;
     }
+
     public Administrator getUser(){
         return model.getLoggedInUser();
     }
@@ -60,6 +62,4 @@ public class AgencyController extends Controller<Agency> {
     private void handleExit(ActionEvent event){
         Platform.exit();
     }
-
-
 }

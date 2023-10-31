@@ -9,12 +9,13 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.control.*?>
 
-<VBox  fx:controller="controller.AgencyController" alignment="CENTER" styleClass="background" prefHeight="200.0" prefWidth="800.0" xmlns:fx="http://javafx.com/fxml/1">
+<?import javafx.scene.text.Text?>
+<VBox fx:controller="controller.AgencyController" alignment="CENTER" styleClass="background" prefHeight="200.0" prefWidth="800.0" xmlns:fx="http://javafx.com/fxml/1">
     <ImageView>
         <Image url="/image/agency.png"/>
     </ImageView>
     <Separator/>
-    <Label fx:id="Heading" text="${controller.user.name}" textAlignment="CENTER" styleClass="heading"/>
+    <Label fx:id="Heading" text="${'Hi ' + controller.user.name + ' welcome to the Prog2 Travel Agency'}" textAlignment="CENTER" styleClass="heading"/>
     <HBox alignment="CENTER" prefWidth="800">
     <Separator/>
     <Button text="Explore Flights" fx:id="flights" onAction="#handleFlights"  prefWidth="200"/>
