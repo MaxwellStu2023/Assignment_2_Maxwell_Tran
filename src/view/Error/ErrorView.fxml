@@ -16,6 +16,7 @@
         <Image url="/image/error.png"/>
     </ImageView>
     <Separator/>
+    <Label text="Error!" alignment="CENTER" styleClass="errorLabel"/>
     <Label text="${controller.exception}" styleClass="errorLabel" alignment="CENTER"/>
     <Separator/>
     <Label text="${controller.errorMessage}" alignment="CENTER"/>
